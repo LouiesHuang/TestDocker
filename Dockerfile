@@ -1,14 +1,5 @@
-FROM java
-MAINTAINER jack
-RUN apt-get update
-RUN apt-get install -y wget
-
-RUN cd /
-
-RUN wget http://apache.stu.edu.tw/tomcat/tomcat-7/v7.0.82/bin/apache-tomcat-7.0.82.tar.gz
-
-RUN tar zxvf apache-tomcat-7.0.82.tar.gz
-
-CMD ["/apache-tomcat-7.0.82/bin/catalina.sh", "run"]
+FROM microsoft/aspnet:4.7.2-windowsservercore-1803
+RUN mkdir C:\RTDemo
+RUN mkdir C:\inetpub\wwwroot\webctrl_client
 
 EXPOSE 8080
